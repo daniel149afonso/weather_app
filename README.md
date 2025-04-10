@@ -1,4 +1,4 @@
-# ☀️ Weather App | Application Météo
+# ☀️ Weather App
 
 ### 🇬🇧 English
 > A simple weather app that lets you check the current weather in any city using the OpenWeatherMap API.
