@@ -24,6 +24,7 @@ window.onload = function(){
 					let response = requete.response;
 					let temperature = response.main.temp;
 					let city = response.name;
+					const weatherIcon = document.querySelector(".weather-icon");
 					document.querySelector(".temp").innerHTML = Math.round(temperature) + "°C";
 					document.querySelector(".city").innerHTML = city;
 					document.querySelector(".humidity").innerHTML = response.main.humidity + "%";
@@ -47,6 +48,7 @@ window.onload = function(){
 					document.querySelector(".weather").style.display = "block";
 					//hide error message
 					document.querySelector(".error").style.display = "none";
+					checkWeather("London");
 					}
 					else {
 						alert('A problem appeared, try again later.');
@@ -59,9 +61,9 @@ window.onload = function(){
 		alert("You refused position");
 		const apiKey = "c3841b9bc39b06edc9a9cc1c6a66e563";
 		const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-		const searchBox = document.querySelector(".search input")
-		const searchBtn = document.querySelector(".search button")
-		const weatherIcon = document.querySelector(".weather-icon")
+		const searchBox = document.querySelector(".search input");
+		const searchBtn = document.querySelector(".search button");
+		const weatherIcon = document.querySelector(".weather-icon");
 		async function checkWeather(city){
 			const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 			if(response.status == 404){
